@@ -1,0 +1,121 @@
+<?php
+	session_start();
+	if(isset($_SESSION['saved']) && $_SESSION['saved']===true){
+		echo "<script>alert('Data saved succesfully');</script>";
+		unset($_SESSION['saved']);
+	}
+?>
+
+<!DOCTYPE html>
+<html scroll-behavior: smooth>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My Personal Webpage</title>
+        <meta name="viewport" content="width-device-width, initial scale=1">
+        
+        <link href="styles.css" rel="stylesheet">
+        <style>
+            #button{
+                display: inline-block; border: 2px solid greenyellow; padding: 10px;
+                cursor: pointer; background-color: #333333; text-align: center;
+                transition: 0.6s;
+                margin-bottom: 5px;
+            }
+            #button:hover{
+                background-color: #adff2faa;
+            }
+        </style>
+        
+    </head>
+    <body style="background-color: grey">
+        <div class="Navbar">
+                <div class="Navbar_options">
+                    <div><a href="">Home</a></div>
+                    <div><a href="#myChart">Experience</a></div>
+                    <div><a href="#Portfolioheading">Portfolio</a></div>
+                    <div><a href="#contactheading">Contact</a></div>
+                    <div class="imgnav"><img class="Navbar-pic" src="scharacter.png" height="40.6px" width="40.5px" alt="S Sahu"></div>
+                </div>
+        </div>
+        
+        <div class="Intro">
+            <div id="Introtxt">I'M <br>LIONEL<br>MESSI <br><p style="font-size: xx-large; font-family: Arial">COMPUTER NERD</p> </div>
+            <div id="Intropic"><img height="497px" width="389px" src="Photograph.jpeg" alt="Sam" ></div>
+        </div>
+        
+        <div class="Resume">
+            <div id="Resumepic"><img class="Navbar-pic" src="scharacter.png" width=70px height=70px alt="S Sahu" ></div>
+            <div id="Resumetxt"><p >I am doing my graduate studies from Miami la. Currently, I am a day scholar, residing in Miami. My detailed resume can be downloaded from below. </p></div>
+            <div id="button"><a href="Resume_Template.pdf" target="_blank" style="color:white; text-decoration: none" >Download Resume</a></div>
+        </div>
+        
+        <!--<canvas id="myChart"></canvas>
+        <script src="script.js"></script>-->
+        
+        <div class="workexp"><h1 style="text-align: center">My Knowledge Level In Software</h1><canvas id="myChart"></canvas></div>
+        <script src="scripty.js"></script>
+        
+        <div class="portfolio">
+            <h1 id="Portfolioheading" style="text-align: center">02 PORTFOLIO</h1>
+            <h2 style="text-align: center">My Latest Work. <a style="color:azure; text-decoration: none" href=""> See more > </a></h2>
+            <div id="portfoliopics">
+                <div class="picont"><a href="" id="p1"><img src="deep.jpg"><div id="p1">PROJECT 1</div></a></div>
+                <div class="picont"><a href="" id="p2"><img src="pc.gif"><div id="p2">PROJECT 2</div></a></div>
+                <div class="picont"><a href="" id="p3"><img src="smartphone.jpg"><div id="p3">PROJECT 3</div></a></div>
+            </div>
+        </div>
+        
+        <h1 id="contactheading" style="text-align: center">03 CONTACT</h1>        
+        <div class="contact">
+            
+            <div class="contactintro">
+                <h2>CONTACT</h2>
+                If you want to contact me please fill in the details and press "Submit".
+                <br>
+                <br>
+                <p style="color: white">
+                    <a style="color: white; text-decoration:none" href="mailto:bigboss@gmail.com">Mail: bigboss@gmail.com</a><br>
+                    Tel: 1-800-000-0000
+                </p>
+            </div>
+            
+           	   
+            <?php include 'save_data.php' ?>
+            <div class="contactform">
+		    <form method="post" action="">
+                    <div class="contactforminfo">
+                        
+                        <span class="error"> <?php echo $fnameErr;?></span>
+                        <label for="fname">*First Name</label>                    
+                        <input type="text" id="fname" name="fname" value="">
+
+                        <span class="error"> <?php echo $lnameErr;?></span>
+                        <label for="lname">*Last Name</label>
+			<input type="text" id="lname" name="lname" value="">
+                        
+			<span class="error"> <?php echo $emailErr;?></span>                    
+                        <label for="email">*Email: </label>
+                        <input type="email" id="email" name="email" value="">
+                                       
+			<span class="error"> <?php echo $MobileErr;?></span>            			                    
+                        <label for="Mobile">*Mobile No: </label>
+                        <input type="tel" id="Mobile" name="Mobile" value="">
+                
+			<input type="submit" value="Send">
+                        <span class="error"><?php echo $_SESSION['Requestold'];?></span>            			                    
+                    
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <footer style="background-color: rgb(51, 59, 80)">
+            <p style="color: white; align-self: center; text-align: center"><img width="24.6px" height="24.6px" src="scharacter.png" style="align-self: center; text-align: left"> © 2035 by Sam Curran</p>    
+        </footer>
+
+    </body>
+</html>
