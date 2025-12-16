@@ -1,10 +1,10 @@
-<?php
+<!--<?php
 	session_start();
 	if(isset($_SESSION['saved']) && $_SESSION['saved']===true){
 		echo "<script>alert('Data saved succesfully');</script>";
 		unset($_SESSION['saved']);
 	}
-?>
+?>-->
 
 <!DOCTYPE html>
 <html scroll-behavior: smooth>
