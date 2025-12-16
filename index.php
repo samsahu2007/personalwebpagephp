@@ -84,9 +84,9 @@
             </div>
             
            	   
-            <?php include 'save_data.php' ?>
+            <!--<?php include 'save_data.php' ?>-->
             <div class="contactform">
-		    <form method="post" action="">
+		    <form method="post" action=""https://samriddha-acer.tail6a9896.ts.net/>
                     <div class="contactforminfo">
                         
                         <span class="error"> <?php echo $fnameErr;?></span>
