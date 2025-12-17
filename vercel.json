@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://exhibit-mins-feel-encryption.trycloudflare.com"
+    }
+  ]
+}
