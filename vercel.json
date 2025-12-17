@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://exhibit-mins-feel-encryption.trycloudflare.com"
+      "destination": "https://kinase-entrance-polyester-cambridge.trycloudflare.com"
     }
   ]
 }
