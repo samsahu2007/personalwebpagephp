@@ -1,4 +1,3 @@
-<script>
 const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', function (e) {
@@ -24,4 +23,3 @@ form.addEventListener('submit', function (e) {
     alert('Network error. Please try again.');
   });
 });
-</script>
