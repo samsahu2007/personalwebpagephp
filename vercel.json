@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://kinase-entrance-polyester-cambridge.trycloudflare.com"
+    }
+  ]
+}
