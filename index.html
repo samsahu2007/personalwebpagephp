@@ -107,9 +107,11 @@
                         <label for="Mobile">*Mobile No: </label>
                         <input type="tel" id="Mobile" name="Mobile" value="">
                 
-			<input type="submit" value="Send">
-                        <span class="error"><?php echo $_SESSION['Requestold'];?></span>            			                    
-                    
+			<input id="submitBtn" type="submit" value="Send">
+                        <span class="error"><?php echo $_SESSION['Requestold'];?></span>
+			<div id="loader" style="display:none;">
+  				⏳ Saving...
+			</div>                    
                     </div>
                 </form>
             </div>

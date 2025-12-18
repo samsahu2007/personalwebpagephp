@@ -3,6 +3,14 @@ const form = document.getElementById('contactForm');
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
+  const form=e.target;
+  const submitBtn = document.getElementById("submitBtn");
+  const loader = document.getElementById("loader");
+  
+  loader.style.display = "inline-block";
+  submitBtn.disabled = true;
+  submitBtn.value = "Please wait...";
+
   const formData = new FormData(form);
 
   fetch(form.action, {
@@ -21,5 +29,10 @@ form.addEventListener('submit', function (e) {
   .catch(error => {
     console.error(error);
     alert('Network error. Please try again.');
+  })
+  .finally(() => {
+    loader.style.display = "none";
+    submitBtn.disabled = false;
+    submitBtn.value = "Submit";
   });
 });
